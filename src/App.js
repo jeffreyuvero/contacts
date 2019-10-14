@@ -1,16 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {Provider} from 'react-redux';
+import store from './store'
 
-function App() {
-  return (
-    <div className="App">
-        <h1>Contacts Management</h1>
-        <button>ADD Contact</button>
-        <hr />
-        <p>name || contact number</p>
-        <p>name || contact number</p>
-        <p>name || contact number</p>
-    </div>
-  );
+import Index from '../Component/Index';
+
+class App extends Component {
+  render(){
+    return(
+        <Provider store = {store} >
+          <div>
+            <Index />
+          </div>
+        </Provider>
+
+    )
+  }
 }
 
 export default App;
